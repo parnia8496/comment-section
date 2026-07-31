@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>comment-section</title>
+  </head>
+  <body class="bg-very-light-gray h-screen">
+    <main class="flex flex-col gap-5">
+      <div class="flex bg-white p-10 my-5 mx-40 rounded-2xl">
+        <div
+          class="flex flex-col bg-very-light-gray p-2 justify-between items-center rounded-xl"
+        >
+          <span class="plus text-blue-300">+</span>
+          <span class="score text-moderate-blue">9</span>
+          <span class="minus text-blue-300 text-2xl">-</span>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5 px-5 items-center justify-between">
+            <div class="flex items-center gap-5">
+              <img src="/public/image-amyrobson-DIYtJakD.webp" />
+              <span class="text-dark-blue font-bold">amyrobson </span>
+              <span class="text-gray-blue">2 years ago</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="reply material-icons text-moderate-blue hover:text-violet-300"
+              >
+                reply
+              </span>
+            </div>
+          </div>
+          <div class="px-5">
+            <p class="text-gray-blue">
+              Impressive! Though it seems the drag feature could be improved.
+              But overall it looks incredible. You've nailed the design and the
+              responsiveness at various breakpoints works really well.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="replyInput hidden flex bg-white p-10 my-1 mx-40 rounded-2xl gap-2"
+      >
+        <img src="public/image-juliusomo-GOpOiOke.webp" class="w-10 h-10" />
+        <input
+          type="text"
+          placeholder="@amyrobson."
+          class="h-30 w-full border-2 border-black outline-none rounded-2xl p-2"
+        />
+
+        <button
+          class=" replycommentbtn bg-moderate-blue text-white font-bold h-10 w-20 p-2 rounded-[8px] hover:bg-violet-300"
+        >
+          REPLY
+        </button>
+      </div>
+      <div
+        class="replyed hidden flex bg-white p-10 my-1 mr-40 ml-80 rounded-2xl gap-5"
+      > <div>
+      <div
+          class="flex flex-col bg-very-light-gray p-2 justify-between items-center rounded-xl"
+        >
+          <span class="plus text-blue-300">+</span>
+          <span class="score text-moderate-blue">9</span>
+          <span class="minus text-blue-300 text-2xl">-</span>
+        </div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <div class="flex gap-5">
+        <img src="public/image-juliusomo-GOpOiOke.webp" class="w-10 h-10" />
+        <span class="text-dark-blue font-bold">juliusomo</span>
+        <span class="bg-moderate-blue w-15 h-8 text-white flex items-center justify-center">You</span>
+              <span class="text-gray-blue">2 years ago</span>
+              </div>
+             
+              <div class=" flex">
+<span>@amyrobson</span> <span class="inputvalue"></span>
+       </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
