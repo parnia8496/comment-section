@@ -137,7 +137,25 @@ minusBtn.className = "score-btn text-indigo-300";
 
  replyBtn.dataset.id = comment.id;
 
- actions.append(replyBtn);
+ if (comment.isOwner) {
+   actions.innerHTML = `
+    <button 
+      class="delete-btn text-red-500 font-bold"
+      data-id="${comment.id}">
+      <i class="fa-solid fa-trash"></i>
+      Delete
+    </button>
+
+    <button 
+      class="edit-btn text-indigo-500 font-bold"
+      data-id="${comment.id}">
+      <i class="fa-solid fa-pen"></i>
+      Edit
+    </button>
+  `;
+ } else {
+   actions.append(replyBtn);
+ }
 
   header.append(userInfo, actions);
 
@@ -237,6 +255,8 @@ commentsContainer.addEventListener("click", (e) => {
   if (deleteBtn) {
     const id = Number(deleteBtn.dataset.id);
 
+    comments = comments.filter((comment) => comment.id !== id);
+
     comments.forEach((comment) => {
       if (comment.replies) {
         comment.replies = comment.replies.filter((reply) => reply.id !== id);
@@ -332,16 +352,17 @@ sendComment.addEventListener("click", () => {
 
   if (!text) return;
 
-  const newComment = {
-    id: Date.now(),
-    content: text,
-    score: 0,
-    createdAt: "Just now",
-    user: {
-      username: "juliusomo",
-      image: "./public/image-juliusomo-GOpOiOke.webp",
-    },
-  };
+ const newComment = {
+   id: Date.now(),
+   content: text,
+   score: 0,
+   createdAt: "Just now",
+   user: {
+     username: "juliusomo",
+     image: "./public/image-juliusomo-GOpOiOke.webp",
+   },
+   isOwner: true,
+ };
 
   comments.push(newComment);
 
